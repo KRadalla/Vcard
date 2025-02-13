@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
     <title>Valentine's Card</title>
     <link rel="stylesheet" href="style.css">
-    
     <script>
         function toggleCard() {
             let card = document.querySelector('.card');
@@ -15,31 +14,26 @@
             card.classList.toggle('open');
             envelope.classList.toggle('opened');
 
-            // Play or stop the music
-            if (!music.paused) {
-                music.pause();
-                music.currentTime = 0;
-            } else {
-                music.play();
+            // Play music on first click (to bypass autoplay restrictions)
+            if (music.paused) {
+                music.play().catch(error => console.log("Autoplay blocked:", error));
             }
         }
     </script>
 </head>
 <body>
-
-    <!-- Background Music -->
-    <audio id="bgMusic" src="WALONG BILYON.mp3" loop></audio>
+    <audio id="bgMusic" src="WALONG BILYON.mp3" playsinline></audio>
 
     <div class="container">
         <!-- Envelope -->
         <div class="envelope" onclick="toggleCard()">
-            <img src="env.png" alt="Closed Envelope" class="closed">
-            <img src="open.png" alt="Open Envelope" class="open">
+            <img src="closed-envelope.png" alt="Closed Envelope" class="closed">
+            <img src="open-envelope.png" alt="Open Envelope" class="open">
         </div>
 
         <!-- Valentine's Card -->
         <div class="card">
-            <h2>Happy Valentine's Day!</h2>
+            <h2 class="title">Happy Valentine's Day!</h2>
             <div class="heart">❤️</div>
             <p class="message">
                 You'll always be beautiful in my eyes. <br>
@@ -47,6 +41,5 @@
             </p>
         </div>
     </div>
-
 </body>
 </html>

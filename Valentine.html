@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <title>Valentine's Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleCard() {
+            let card = document.querySelector('.card');
+            let envelope = document.querySelector('.envelope');
+    
+            card.classList.toggle('open');
+            envelope.classList.toggle('opened');
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" onclick="toggleCard()">
+            <img src="env.png" alt="Closed Envelope" class="closed">
+            <img src="open.png" alt="Open Envelope" class="open">
+        </div>
+        <div class="card">
+            <h2>Happy Valentine's Day!</h2>
+            <div class="heart">❤️</div>
+            <p class="message">
+                <span>Y</span><span>o</span><span>u</span><span>'</span><span>l</span><span>l</span> 
+                <span>a</span><span>l</span><span>w</span><span>a</span><span>y</span><span>s</span> 
+                <span>b</span><span>e</span> <span>b</span><span>e</span><span>a</span><span>u</span><span>t</span><span>i</span><span>f</span><span>u</span><span>l</span> 
+                <span>i</span><span>n</span> <span>m</span><span>y</span> <span>e</span><span>y</span><span>e</span><span>s</span>.
+                <br>
+                <span>I</span> <span>l</span><span>o</span><span>v</span><span>e</span> <span>y</span><span>o</span><span>u</span> 
+                <span>a</span><span>l</span><span>w</span><span>a</span><span>y</span><span>s</span>, 
+                <span>b</span><span>a</span><span>b</span><span>e</span>. ❤️
+            </p>
+            
+            
+            
+            
+        </div>
+    </div>
+</body>
+</html>
